@@ -1,5 +1,10 @@
 # Changelog
 
+## \[0.9.2]
+
+- Fix movable window background on macOS.
+  - [e0520b48](https://github.com/tauri-apps/tao/commit/e0520b488bd95167c73c971448e83775032037af) fix: fix movable window background on macOS, closes [#406](https://github.com/tauri-apps/tao/pull/406) ([#405](https://github.com/tauri-apps/tao/pull/405)) on 2022-05-27
+
 ## \[0.9.1]
 
 - Fix the size of the slice passed to `DragQueryFileW` by passing `std::mem::transmute(path_buf.spare_capacity_mut())` instead of `&mut path_buf`.
