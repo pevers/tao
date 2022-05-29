@@ -72,6 +72,7 @@ fn main() {
   #[cfg(target_os = "macos")]
   let mut system_tray = SystemTrayBuilder::new(icon.clone(), Some(tray_menu))
     .with_icon_as_template(true)
+    .with_tool_tip("Tauri - Build smaller, faster, and more secure desktop applications with a web frontend.")
     .build(&event_loop)
     .unwrap();
 

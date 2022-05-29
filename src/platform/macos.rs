@@ -511,12 +511,20 @@ pub trait SystemTrayBuilderExtMacOS {
   /// You can use the alpha channel in the image to adjust the opacity of black content.
   ///
   fn with_icon_as_template(self, is_template: bool) -> Self;
+
+  /// Sets the hover text for this tray icon.
+  fn with_tool_tip(self, tool_tip: &str) -> Self;
 }
 
 #[cfg(feature = "tray")]
 impl SystemTrayBuilderExtMacOS for SystemTrayBuilder {
   fn with_icon_as_template(mut self, is_template: bool) -> Self {
     self.0.system_tray.icon_is_template = is_template;
+    self
+  }
+
+  fn with_tool_tip(mut self, tool_tip: &str) -> Self {
+    self.0.system_tray.tool_tip = Some(tool_tip.to_string());
     self
   }
 }
